@@ -1,0 +1,1 @@
+//Minerals held by each respective facility? handles subtraction of mineral stock when puchase button event occurs.
