@@ -2,17 +2,20 @@
 //Importing governor data from database, pairs to respective colony and/or handles active status eventdocument.addEventListener(
 
 import { getColonies, getGovernors } from "./database.js";
+import { facilityChoice } from "./Facilities.js";
 
 export const Governors = getGovernors()
 
-// a change event listener that invokes the SetGovernors function - 
-// "change",
-//     (event) => {
-//         if (event.target.name === "governor") {
-//             setGovernors(parseInt(event.target.value))
-//         }
-//     }
-// )
+//a change event listener that invokes the SetGovernors function - 
+
+document.addEventListener(
+"change",
+    (event) => {
+        if (event.target.id === "governorChoices") {
+            document.getElementById("facilityChoices").disabled = false
+        }
+    }
+)
 
 
 export const governorChoice = () => {
