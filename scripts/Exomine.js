@@ -1,0 +1,1 @@
+//Enables mineral purchase button event and exports html to be displayed
