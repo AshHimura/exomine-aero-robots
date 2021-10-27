@@ -324,8 +324,8 @@ export const setFacility = (facilityId) => {
 export const getFacilities = () => {
     return database.facilities.map(facility => ({...facility}))
 }
-export const getGovenors = () => {
-    return database.govenors.map(governor => ({...governor}))
+export const getGovernors = () => {
+    return database.governors.map(governor => ({...governor}))
 }
 export const getColonies = () => {
     return database.colonies.map(colony => ({...colony}))
