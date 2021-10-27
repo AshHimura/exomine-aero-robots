@@ -1,5 +1,4 @@
-//Enables mineral purchase button event and exports html to be displayedimport { DiamondSizes } from "./DiamondSizes.js"
-
+//Enables mineral purchase button event and exports html to be displayed
 
 
 
