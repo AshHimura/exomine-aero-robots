@@ -320,10 +320,28 @@ export const setFacility = (facilityId) => {
     database.transientState.selectedFacility = facilityId
     document.dispatchEvent( new CustomEvent("stateChanged") )
 }
-
+// export functions - for use in other modules
 export const getFacilities = () => {
-    return database.facilities.map(f => ({...f}))
+    return database.facilities.map(facility => ({...facility}))
 }
+export const getGovernors = () => {
+    return database.governors.map(governor => ({...governor}))
+}
+export const getColonies = () => {
+    return database.colonies.map(colony => ({...colony}))
+}
+export const getMinerals = () => {
+    return database.minerals.map(mineral => ({...mineral}))
+}
+export const getMineralFacilities = () => {
+    return database.mineralFacilities.map(mineralFacility => ({...mineralFacility}))
+}
+export const getColonyMinerals = () => {
+    return database.colonyMinerals.map(colonyMineral => ({...colonyMineral}))
+}
+
+
+
 
 export const purchaseMineral = () => {
 
