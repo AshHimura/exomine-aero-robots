@@ -1,6 +1,7 @@
-//Importing governor data from database, pairs to respective colony and/or handles active status eventdocument.addEventListener(
-import { setGovernors } from "./database.js"
 
+//Importing governor data from database, pairs to respective colony and/or handles active status eventdocument.addEventListener(
+
+import { getColonies, getGovernors, setGovernors from "./database";
 
 
 
@@ -30,3 +31,5 @@ export const governorChoice = () => {
 
     return html
 }
+
+
