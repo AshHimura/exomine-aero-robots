@@ -1,5 +1,5 @@
 //Enables mineral purchase button event and exports html to be displayed
-
+import {governorChoice} from "./Governors.js"
 
 
 export const Exomine = () => {
