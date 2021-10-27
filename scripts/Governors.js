@@ -15,7 +15,7 @@ import { setGovernors } from "./database.js"
 
 
 export const governorChoice = () => {
-    let html = "<select id="governor__choices">"
+    let html = "<select id="governorChoices">"
 
     // Use .map() for converting objects to <li> elements
     //  the .map() method iterates the array and invokes teh function you define
