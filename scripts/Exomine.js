@@ -5,7 +5,7 @@
 
 export const Exomine = () => {
     return `
-        <h1Solar System Mining Marketplace</h1>
+        <h1>Solar System Mining Marketplace</h1>
 
         <article class="choices">
             <section class="choices__governor options">
