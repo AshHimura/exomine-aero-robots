@@ -23,3 +23,6 @@ export const colonyMineral = () => {
         </select>
     `
 }
+ const elem = document.querySelector('#Colony Minerals')
+
+console.log(elem.innerText)

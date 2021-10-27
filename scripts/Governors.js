@@ -1,7 +1,7 @@
 
 //Importing governor data from database, pairs to respective colony and/or handles active status eventdocument.addEventListener(
 
-import { getColonies, getGovernors, setGovernors } from "./database.js";
+import { getColonies, getGovernors } from "./database.js";
 
 export const Governors = getGovernors()
 
@@ -22,7 +22,7 @@ export const governorChoice = () => {
 
     // Use .map() for converting objects to <li> elements
     //  the .map() method iterates the array and invokes teh function you define
-    const listItems = governor.map(governor => {
+    const listItems = Governors.map(governor => {
         return `
             <option value="${governor.id}">${governor.name}</option>
         `
