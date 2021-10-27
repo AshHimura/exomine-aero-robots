@@ -15,18 +15,18 @@ import { setGovernors } from "./database.js"
 
 
 export const governorChoice = () => {
-    let html = "<ul>"
+    let html = "<select id="governor__choices">"
 
     // Use .map() for converting objects to <li> elements
     //  the .map() method iterates the array and invokes teh function you define
     const listItems = governor.map(governor=> {
         return `<li>
-            <input type="radio" name="governor" value="${governor.id}" /> ${governor.name}
+            <option value="${governor.id}">${governor.name}</option>
         </li>`
     })
 
     html += listItems.join("")
-    html += "</ul>"
+    html += "</select>"
 
     return html
 }
