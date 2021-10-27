@@ -1,28 +1,34 @@
-//Facility data to be selected depending on active status, possibly handles drop list eventexport const wheelsFunction = () => {
-//     let html = `<h2>Facility</h2>`
+//Facility data to be selected depending on active status, possibly handles drop list event
 
-//     html += `<select id="facility">`
-//     html += `<option value="0">Choose a Facility</option>`
+import { getFacilities } from "./database.js"
 
-//     // Use .map() for converting objects to <li> elements
-//     // .map() iterates the array and invokes function (wheels)
-//     // Wheels function is argument that .map method will accept 
-//     // iterates array - takes object at current location - pass it as arg to function
-//     // function defines size parameter - object goes into function - string returned into new array
+export const Facilities = getFacilities()
+
+/* document.addEventListener(
+    "change",
+    (event) => {
+        if (event.target.id) {
+            
+        }
+    }
+) */
 
 
-//     const listItemsArray = facility.map(
-//         (facilities) => {
-//             return `
-//         <option value ="${facilities.id}">${facilities.name}</option>`
+export const facilityChoice = () => {
+    let html = `<select id='facilityChoices' disabled="true" name="facilityChoices">
+    <label for='facility__Choices'> Choose your facility:</label>`
 
-//         }
-// )
 
-//     // Join all of the strings in the array into a single string
-//     html += listItemsArray.join("")
-//     html += "</select>"
- 
-//     return html
+    // Use .map() for converting objects to <li> elements
+    //  the .map() method iterates the array and invokes teh function you define
+    const listItems = Facilities.map(facility => {
+        return `
+            <option value="${facility.id}">${facility.name}</option>
+        `
+    })
 
-// }
+    html += listItems.join("")
+    html += "</select>"
+
+    return html
+}
