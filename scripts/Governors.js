@@ -20,9 +20,9 @@ export const governorChoice = () => {
     // Use .map() for converting objects to <li> elements
     //  the .map() method iterates the array and invokes teh function you define
     const listItems = governor.map(governor=> {
-        return `<li>
+        return `
             <option value="${governor.id}">${governor.name}</option>
-        </li>`
+        `
     })
 
     html += listItems.join("")
