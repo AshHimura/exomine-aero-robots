@@ -1,6 +1,6 @@
 //Enables mineral purchase button event and exports html to be displayed
-import { governorChoice } from "./Governors.js"
-import { colonyMineral } from "./Colonies.js"
+import {governorChoice} from "./Governors.js"
+import { colonyMinerals } from "./ColonyMin.js"
 import { facilityChoice } from "./Facilities.js"
 
 
@@ -16,7 +16,7 @@ export const Exomine = () => {
             <aside>
                 <section class="colony__resources">
                 <h2>Available Resources for Colony </h2>
-                ${colonyMineral()}
+                ${colonyMinerals()}
                 </section>
             </aside>
         </article>
