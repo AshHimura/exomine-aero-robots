@@ -1,6 +1,6 @@
 //Facility data to be selected depending on active status, possibly handles drop list event
 
-import { getFacilities } from "./database.js"
+import { getFacilities, getTransientState } from "./database.js"
 
 export const Facilities = getFacilities()
 
@@ -15,12 +15,23 @@ export const Facilities = getFacilities()
 
 
 export const facilityChoice = () => {
-    let html = `<select id='facilityChoices' disabled="true" name="facilityChoices">
+    
+    const facilchoice = getTransientState()
+
+    let disattribute;
+
+
+    
+    if (facilchoice.governorId) {
+       disattribute = ""
+        // if user has chose governor, than facility choices should not be disabled (enabled)
+    } else {
+        disattribute = "disabled"
+    }
+    let html = `<select ${disattribute} id='facilityChoices' name="facilityChoices">
     <label for='facility__Choices'> Choose your facility:</label>`
-
-
-    // Use .map() for converting objects to <li> elements
-    //  the .map() method iterates the array and invokes teh function you define
+   
+    
     const listItems = Facilities.map(facility => {
         return `
             <option value="${facility.id}">${facility.name}</option>

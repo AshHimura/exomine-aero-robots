@@ -21,5 +21,15 @@ colMinHTML += "</ul>"
 return colMinHTML
      
 }
+
+export const findColony = (governorId) => {
+   let foundColony = 0
+    for (colony of colonies) {
+        if (governorId === overnor.colonyId) {
+            foundColony = colony.id
+        } 
+    }
+    return foundColony
+}
  
 

@@ -1,81 +1,81 @@
 const database = {
     governors: [
         {
-            id: 1, 
-            name: "Kathryn Janeway", 
+            id: 1,
+            name: "Kathryn Janeway",
             colonyId: 1,
             active: true
-        }, 
+        },
         {
-            id: 2, 
-            name: "Nyota Uhura", 
+            id: 2,
+            name: "Nyota Uhura",
             colonyId: 2,
             active: true
-        }, 
+        },
         {
-            id: 3, 
-            name: "Leia Organa", 
+            id: 3,
+            name: "Leia Organa",
             colonyId: 2,
             active: false
-        }, 
+        },
         {
-            id: 4, 
-            name: "Carolyn Fry", 
+            id: 4,
+            name: "Carolyn Fry",
             colonyId: 2,
             active: false
-        }, 
+        },
         {
-            id: 5, 
-            name: "Ruby Rhod", 
+            id: 5,
+            name: "Ruby Rhod",
             colonyId: 3,
             active: true
-        }, 
+        },
         {
-            id: 6, 
-            name: "Turanga Leela", 
+            id: 6,
+            name: "Turanga Leela",
             colonyId: 4,
             active: true
-        }, 
+        },
         {
-            id: 7, 
-            name: "Laurel Weaver", 
+            id: 7,
+            name: "Laurel Weaver",
             colonyId: 5,
             active: false
-        }, 
+        },
         {
-            id: 8, 
-            name: "Ellen Ripley", 
+            id: 8,
+            name: "Ellen Ripley",
             colonyId: 6,
             active: true
-        }, 
+        },
         {
-            id: 9, 
-            name: "Amy Pond", 
+            id: 9,
+            name: "Amy Pond",
             colonyId: 7,
             active: true
-        }, 
+        },
         {
-            id: 10, 
-            name: "River Song", 
+            id: 10,
+            name: "River Song",
             colonyId: 7,
             active: true
-        }, 
-    ], 
+        },
+    ],
     colonies: [
         {
             id: 1,
             name: "Minerva"
         },
         {
-            id: 2, 
+            id: 2,
             name: "Terra"
         },
         {
-            id: 3, 
+            id: 3,
             name: "Sol"
         },
         {
-            id: 4, 
+            id: 4,
             name: "Diana"
         },
         {
@@ -93,11 +93,11 @@ const database = {
     ],
     minerals: [
         {
-            id: 1, 
+            id: 1,
             name: "Gold"
         },
         {
-            id: 2, 
+            id: 2,
             name: "Pumice"
         },
         {
@@ -148,7 +148,7 @@ const database = {
             id: 14,
             name: "Zinc"
         }
-    ], 
+    ],
     facilities: [
         {
             id: 1,
@@ -156,7 +156,7 @@ const database = {
             active: true
         },
         {
-            id: 2, 
+            id: 2,
             name: "Naro",
             active: true
         },
@@ -182,11 +182,11 @@ const database = {
         },
         {
             id: 7,
-            name: "Kennedy", 
+            name: "Kennedy",
             active: true
         },
 
-    ], 
+    ],
     mineralFacilities: [
         {
             id: 1,
@@ -279,7 +279,7 @@ const database = {
             quantity: 2
         },
 
-    ], 
+    ],
     colonyMinerals: [
         {
             id: 1,
@@ -316,37 +316,65 @@ const database = {
     transientState: {}
 }
 
-export const setFacility = (facilityId) => {
-    database.transientState.selectedFacility = facilityId
-    document.dispatchEvent( new CustomEvent("stateChanged") )
-}
+
+
 // export functions - for use in other modules
 export const getFacilities = () => {
-    return database.facilities.map(facility => ({...facility}))
+    return database.facilities.map(facility => ({ ...facility }))
 }
 export const getGovernors = () => {
-    return database.governors.map(governor => ({...governor}))
+    return database.governors.map(governor => ({ ...governor }))
 }
 export const getColonies = () => {
-    return database.colonies.map(colony => ({...colony}))
+    return database.colonies.map(colony => ({ ...colony }))
 }
 export const getMinerals = () => {
-    return database.minerals.map(mineral => ({...mineral}))
+    return database.minerals.map(mineral => ({ ...mineral }))
 }
 export const getMineralFacilities = () => {
-    return database.mineralFacilities.map(mineralFacility => ({...mineralFacility}))
+    return database.mineralFacilities.map(mineralFacility => ({ ...mineralFacility }))
 }
 export const getColonyMinerals = () => {
-    return database.colonyMinerals.map(colonyMineral => ({...colonyMineral}))
+    return database.colonyMinerals.map(colonyMineral => ({ ...colonyMineral }))
+}
+export const getTransientState = () => {
+    return {...database.transientState}
+}
+export const setGovernor = (id) => {
+    database.transientState.governorId = id
+    document.dispatchEvent(new CustomEvent("stateChanged"))
+
+}
+export const setColony = (id) => {
+    database.transientState.colonyId = id
+    document.dispatchEvent(new CustomEvent("stateChanged"))
 }
 
+export const setMineral = (id) => {
+    database.transientState.mineral = id
+    document.dispatchEvent(new CustomEvent("stateChanged"))
 
+}
 
+export const setFacility = (id) => {
+    database.transientState.facility = id
+    document.dispatchEvent(new CustomEvent("stateChanged"))
+}
+
+export const setMineralFacility = (id) => {
+    database.transientState.MineralFacility = id
+    document.dispatchEvent(new CustomEvent("stateChanged"))
+}
+
+export const setColonyMineral = (id) => {
+    database.transientState.ColonyMineral = id
+    document.dispatchEvent(new CustomEvent("stateChanged"))
+}
 
 export const purchaseMineral = () => {
 
-        // Broadcast custom event to entire documement so that the
-        // application can re-render and update state
-        document.dispatchEvent( new CustomEvent("stateChanged") )
-    }
+    // Broadcast custom event to entire documement so that the
+    // application can re-render and update state
+    document.dispatchEvent(new CustomEvent("stateChanged"))
+}
 
