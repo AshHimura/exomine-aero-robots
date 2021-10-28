@@ -2,6 +2,7 @@
 import {governorChoice} from "./Governors.js"
 import { colonyMinerals } from "./ColonyMin.js"
 import { facilityChoice } from "./Facilities.js"
+import { colonynameHTML } from "./Colonies.js"
 
 
 export const Exomine = () => {
@@ -15,8 +16,7 @@ export const Exomine = () => {
             </section>
             <aside>
                 <section class="colony__resources">
-                <h2>Available Resources for Colony </h2>
-              
+                ${colonynameHTML()}
                 </section>
             </aside>
         </article>

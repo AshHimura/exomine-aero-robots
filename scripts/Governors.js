@@ -1,7 +1,7 @@
 
 //Importing governor data from database, pairs to respective colony and/or handles active status eventdocument.addEventListener(
 
-import { findColony } from "./Colonies.js";
+
 import { getColonies, getGovernors, getTransientState, setGovernor } from "./database.js";
 
 

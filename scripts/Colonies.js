@@ -1,35 +1,33 @@
+import { getColonies, getGovernors, getTransientState } from "./database.js"
+
 //Responsible for displaying minerals held by each colony when respective governor is selected from drop list 
+export const colonies = getColonies()
 
-import { getGovernors, getColonies } from "./database.js"
 
-//const governors = getGovernors()
-const colonies = getColonies()
-//const colonyMinerals = getColoniesMinerals()
-
-export const colonyMineral = () => {
-    let colMinHTML = "<ul>"
+export const colonynameHTML = () => {
+    const choice = getTransientState()
     
-    const listItems = colonies.map(
-        (colony) => {
-            return `<li value="${colony.id}">${colony.name}</li>`
-        }
-    )
-
-colMinHTML += listItems.join("")
-
-colMinHTML += "</ul>"
-return colMinHTML
-     
-}
-
-export const findColony = (governorId) => {
-   let foundColony = 0
-    for (colony of colonies) {
-        if (governorId === overnor.colonyId) {
-            foundColony = colony.id
-        } 
+    if (choice.governorId) {
+        
+        const governors = getGovernors()
+        const foundGovernor = governors.find(
+            (governor) => {
+                return choice.governorId === governor.id
+            }
+        )
+    
+        const foundColony = colonies.find (
+            (colony) => {
+                return colony.id === foundGovernor.colonyId
+            }
+        )
+        
+    
+        let html = `<h2>${foundColony.name}</h2>`
+    
+        return html
+    } else {
+        return `<h2>No Resources Available</h2>`
     }
-    return foundColony
 }
- 
 
