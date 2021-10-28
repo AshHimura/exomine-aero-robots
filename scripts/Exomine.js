@@ -16,7 +16,7 @@ export const Exomine = () => {
             <aside>
                 <section class="colony__resources">
                 <h2>Available Resources for Colony </h2>
-                ${colonyMinerals()}
+              
                 </section>
             </aside>
         </article>
