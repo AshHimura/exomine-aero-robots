@@ -3,6 +3,7 @@ import {governorChoice} from "./Governors.js"
 import { ColonyMinerals } from "./ColonyMin.js"
 import { facilityChoice } from "./Facilities.js"
 import { colonynameHTML } from "./Colonies.js"
+import { facilityMineralHTML } from "./FacilityMin.js"
 
 
 
@@ -27,12 +28,12 @@ export const Exomine = () => {
                 <section class="choices__facility options">
                     <h2>Facility</h2>
                     ${facilityChoice()}
-                </section>
-            </article>
-            </div>
-        <article class="minCart">
-            <section class="facility__resources">
-                <h2>Minerals at Facility</h2>
+                    </section>
+                    </article>
+                    </div>
+                    <article class="minCart">
+                    <section class="facility__resources">
+                    ${facilityMineralHTML()}
             </section>       
             <aside>
                 <section class="cart">

@@ -1,17 +1,25 @@
 //Facility data to be selected depending on active status, possibly handles drop list event
 
-import { getFacilities, getTransientState } from "./database.js"
+import { getFacilities, getTransientState, setFacility } from "./database.js"
 
 export const Facilities = getFacilities()
 
-/* document.addEventListener(
+document.addEventListener(
     "change",
-    (event) => {
-        if (event.target.id) {
-            
-        }
-    }
-) */
+        (event) => {
+            if (event.target.id === "facilityChoices") {
+               
+    
+                setFacility(parseInt(event.target.value))
+               
+    
+    
+                }
+                
+    
+            }
+        
+    )
 
 
 export const facilityChoice = () => {
@@ -29,12 +37,17 @@ export const facilityChoice = () => {
         disattribute = "disabled"
     }
     let html = `<select ${disattribute} id='facilityChoices' name="facilityChoices">
-    <label for='facility__Choices'> Choose your facility:</label>`
+    <label for='facility__Choices'> Choose your facility:</label>
+    <option value="0">please select facility</option>`
    
     
     const listItems = Facilities.map(facility => {
+        let selected = ""
+        if (facility.id === facilchoice.facilityId) {
+            selected = "selected"
+        }
         return `
-            <option value="${facility.id}">${facility.name}</option>
+            <option ${selected} value="${facility.id}">${facility.name}</option>
         `
     })
 
