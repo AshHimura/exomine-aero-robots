@@ -3,7 +3,8 @@ import {governorChoice} from "./Governors.js"
 import { ColonyMinerals } from "./ColonyMin.js"
 import { facilityChoice } from "./Facilities.js"
 import { colonynameHTML } from "./Colonies.js"
-import { facilityMineralHTML } from "./FacilityMin.js"
+import { facilityMineralHTML, FacilityMinerals } from "./FacilityMin.js"
+
 
 
 
@@ -34,6 +35,7 @@ export const Exomine = () => {
                     <article class="minCart">
                     <section class="facility__resources">
                     ${facilityMineralHTML()}
+                    ${FacilityMinerals()}
             </section>       
             <aside>
                 <section class="cart">
