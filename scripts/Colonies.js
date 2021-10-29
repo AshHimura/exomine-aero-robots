@@ -10,12 +10,16 @@ export const colonynameHTML = () => {
     if (choice.governorId) {
         
         const governors = getGovernors()
+
+        //Iterating through governors array to compare transient state governors id to return entire governor object
         const foundGovernor = governors.find(
             (governor) => {
                 return choice.governorId === governor.id
             }
         )
     
+        //Iterating through the colonies to return entire colony object,
+        //comparing colony.id to the foundGovernor.colonyId
         const foundColony = colonies.find (
             (colony) => {
                 return colony.id === foundGovernor.colonyId
