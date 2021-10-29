@@ -22,7 +22,9 @@ export const colonynameHTML = () => {
         //comparing colony.id to the foundGovernor.colonyId
         const foundColony = colonies.find (
             (colony) => {
+                
                 return colony.id === foundGovernor.colonyId
+
             }
         )
         
