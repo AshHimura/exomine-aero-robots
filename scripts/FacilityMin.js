@@ -69,7 +69,9 @@ export const FacilityMinerals = () => {
                             return mineral.id === foundfacilmin.mineralId
                         }
                     )
-                    html += `<section>${foundfacilmin.quantity} ${foundMineral.name}</section>`
+                    html += `<section>
+                    <input type="radio" name="minerals"
+                    value="${foundfacilmin.id}" /> ${foundfacilmin.quantity} tons of ${foundMineral.name}</section>`
                 }
             
         
