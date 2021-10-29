@@ -63,20 +63,25 @@ export const FacilityMinerals = () => {
         // const foundMinerals = minerals.filter(
         //     (mineral) => {
                 for (const foundfacilmin of foundfacilityminArray) {
-                    
+                    let checked = ""
+                    if (foundfacilmin.id === choice.mineralId) {
+                        checked = "checked"
+                    } else {
+                        checked = ""
+                    }
                     const foundMineral = minerals.find(
                         (mineral) => {
                             return mineral.id === foundfacilmin.mineralId
                         }
                     )
                     html += `<section>
-                    <input type="radio" name="minerals"
-                    value="${foundfacilmin.id}" /> ${foundfacilmin.quantity} tons of ${foundMineral.name}</section>`
+                    <input type="radio" name="minerals" ${checked}
+                    value="${foundfacilmin.mineralId}" id="${foundfacilmin.id}" /> ${foundfacilmin.quantity} tons of ${foundMineral.name}</section>`
                 }
             
         
 
-
+        
         return html
     } else {
         return `<section>No Minerals found in colony</section>`

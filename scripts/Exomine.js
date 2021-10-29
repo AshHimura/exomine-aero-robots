@@ -4,6 +4,7 @@ import { ColonyMinerals } from "./ColonyMin.js"
 import { facilityChoice } from "./Facilities.js"
 import { colonynameHTML } from "./Colonies.js"
 import { facilityMineralHTML, FacilityMinerals } from "./FacilityMin.js"
+import { cartHTML } from "./Purchase.js"
 
 
 
@@ -40,6 +41,7 @@ export const Exomine = () => {
             <aside>
                 <section class="cart">
                     <h3>Cart</h3>
+                    ${cartHTML()}
                     <button type="submit">Purchase Minerals</button>
                 </section>
             </aside>

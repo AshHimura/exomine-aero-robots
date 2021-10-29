@@ -195,85 +195,85 @@ const database = {
             quantity: 16
         },
         {
-            id: 1,
+            id: 2,
             facilityId: 1,
             mineralId: 2,
             quantity: 1
         },
         {
-            id: 1,
+            id: 3,
             facilityId: 1,
             mineralId: 3,
             quantity: 8
         },
         {
-            id: 2,
+            id: 4,
             facilityId: 2,
             mineralId: 4,
             quantity: 7
         },
         {
-            id: 2,
+            id: 5,
             facilityId: 2,
             mineralId: 5,
             quantity: 23
         },
         {
-            id: 3,
+            id: 6,
             facilityId: 3,
             mineralId: 6,
             quantity: 8
         },
         {
-            id: 4,
+            id: 7,
             facilityId: 4,
             mineralId: 7,
             quantity: 1
         },
         {
-            id: 4,
+            id: 8,
             facilityId: 4,
             mineralId: 8,
             quantity: 1
         },
         {
-            id: 5,
+            id: 9,
             facilityId: 5,
             mineralId: 9,
             quantity: 0
         },
         {
-            id: 5,
+            id: 10,
             facilityId: 5,
             mineralId: 10,
             quantity: 1
         },
         {
-            id: 6,
+            id: 11,
             facilityId: 6,
             mineralId: 11,
             quantity: 12
         },
         {
-            id: 6,
+            id: 12,
             facilityId: 6,
             mineralId: 3,
             quantity: 4
         },
         {
-            id: 7,
+            id: 13,
             facilityId: 7,
             mineralId: 12,
             quantity: 7
         },
         {
-            id: 7,
+            id: 14,
             facilityId: 7,
             mineralId: 13,
             quantity: 4
         },
         {
-            id: 7,
+            id: 15,
             facilityId: 7,
             mineralId: 14,
             quantity: 2
@@ -372,7 +372,7 @@ export const setColonyMineral = (id) => {
 }
 
 export const purchaseMineral = () => {
-
+    database.transientState.
     // Broadcast custom event to entire documement so that the
     // application can re-render and update state
     document.dispatchEvent(new CustomEvent("stateChanged"))
