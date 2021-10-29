@@ -29,19 +29,29 @@ export const ColonyMinerals = () => {
             }
         )
 
-        const foundColonyMin = colonyMinerals.find(
+        const foundColonyMinArray = colonyMinerals.filter(
             (colonyMineral) => {
                 return colonyMineral.colonyId === foundColony.id
             }
         )
+        
+        let html = ""
+  
 
-        const foundMinerals = minerals.find(
-            (mineral) => {
-                return mineral.id === foundColonyMin.mineralId
-            }
-        )    
+        // const foundMinerals = minerals.filter(
+        //     (mineral) => {
+                for (const foundColonyMin of foundColonyMinArray) {
+                    
+                    const foundMineral = minerals.find(
+                        (mineral) => {
+                            return mineral.id === foundColonyMin.mineralId
+                        }
+                    )
+                    html += `<section>${foundColonyMin.quantity} ${foundMineral.name}</section>`
+                }
+            
+        
 
-        let html = `<section>${foundMinerals.name}</section>`
 
         return html
     } else {
